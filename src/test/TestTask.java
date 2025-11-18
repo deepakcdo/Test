@@ -15,6 +15,7 @@ public class TestTask implements ITask {
         if (random.nextInt(10) == 0) {
             System.out.println("exception in " + this);
             throw new RuntimeException("emulated error");
+            
         }
     }
 
