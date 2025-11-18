@@ -10,6 +10,7 @@ public class TaskExecutor {
     public TaskExecutor() {
         workerThread = new Thread(this::run);
     }
+    
 
     public void execute(final ITask task) {
         taskQueue.add(task);
