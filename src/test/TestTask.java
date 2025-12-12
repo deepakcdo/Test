@@ -23,4 +23,3 @@ public class TestTask implements ITask {
         return "TestTask#" + id;
     }
 }
-

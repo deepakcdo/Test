@@ -1,13 +1,2 @@
-.gradle/
-build/
-
-# IntelliJ IDEA
-.idea/
-*.iml
-
-# Gradle wrapper cache
-gradle/wrapper/dists/
-
-# OS files
-.DS_Store
-Thumbs.db
+.gradle
+.idea
