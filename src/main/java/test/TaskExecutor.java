@@ -27,7 +27,7 @@ public class TaskExecutor {
                 task.doWork();
             } catch (final InterruptedException e) {
                 System.out.println("InterruptedException");
-                //Thread.currentThread().interrupt();
+                // Thread.currentThread().interrupt();
             }
         }
     }
@@ -41,3 +41,4 @@ public class TaskExecutor {
         System.out.println("scheduled 50 tasks");
     }
 }
+
