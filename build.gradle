@@ -22,7 +22,7 @@ java {
 }
 
 application {
-    mainClass = 'test.TaskExecutor'
+    mainClass = 'testPack.TaskExecutor'
 }
 
 dependencies {

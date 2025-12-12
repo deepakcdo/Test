@@ -1,4 +1,5 @@
-package test;
+package testpack;
+
 
 public interface ITask {
     void doWork();
