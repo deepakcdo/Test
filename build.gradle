@@ -11,6 +11,9 @@ version = '1.0.0'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 java {
@@ -24,16 +27,29 @@ application {
 }
 
 dependencies {
+    // Local JARs from libs directory
+    implementation fileTree(dir: 'libs', include: '*.jar')
+
+    // Jackson
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.6.0-rc2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.6.0-rc2'
+
+    // Logging
     implementation(group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.1') { transitive = false }
     implementation(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.1') { transitive = false }
     implementation(group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1') { transitive = false }
     implementation(group: 'org.apache.logging.log4j', name: 'log4j-jcl', version: '2.1') { transitive = false }
     implementation(group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: '2.1') { transitive = false }
     implementation(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.8') { transitive = false }
-    // Not available on Maven Central; use the checked-in jar in the repo root.
+
+    // JIDT - from local jar (not on Maven Central)
     implementation files('jidt-1.0.jar')
 
+    // Test dependencies
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.springframework:spring-test:4.3.2.RELEASE'
+    testImplementation 'org.springframework:spring-messaging:4.3.2.RELEASE'
+    testImplementation 'com.fasterxml.jackson.core:jackson-annotations:2.6.0-rc2'
 }
 
 sonar {
