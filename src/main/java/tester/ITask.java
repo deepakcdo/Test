@@ -1,4 +1,4 @@
-package testpack;
+package tester;
 
 
 public interface ITask {
